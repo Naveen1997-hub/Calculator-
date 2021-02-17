@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        AWS_ACCESS_KEY_ID = credentials('jenkins-aws-secret-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
+        AWS_ACCESS_KEY_ID = AKIA3AP7Y7HRFVVDCIWN
+        AWS_SECRET_ACCESS_KEY = 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
         ARTIFACT_NAME = 'calculator.jar'
         AWS_S3_BUCKET = 'valentin-calculator-api-jars'
         AWS_EB_APP_NAME = 'calculator'
