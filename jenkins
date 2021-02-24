@@ -5,10 +5,10 @@ pipeline {
         AWS_ACCESS_KEY_ID = credentials('jenkins-aws-secret-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
         ARTIFACT_NAME = 'calculator.jar'
-        AWS_S3_BUCKET = 'valentin-calculator-api-jars'
-        AWS_EB_APP_NAME = 'calculator'
-        AWS_EB_ENVIRONMENT = 'Calculator-env'
-        AWS_EB_APP_VERSION = "${BUILD_ID}"
+        AWS_S3_BUCKET = 'jenkins-1.1'
+        AWS_EB_APP_NAME = 'jenkins-1.1'
+        AWS_EB_ENVIRONMENT = 'Jenkins11-env'
+        AWS_EB_APP_VERSION = "${jenkins-1.1}"
     }
 
     stages {
@@ -45,8 +45,8 @@ pipeline {
                     // bat 'aws iam get-user'
                     sh 'aws configure set region us-east-2'
                     sh 'aws s3 cp ./target/calculator-0.0.1-SNAPSHOT.jar s3://$AWS_S3_BUCKET/$ARTIFACT_NAME'
-                    sh 'aws elasticbeanstalk create-application-version --application-name $AWS_EB_APP_NAME --version-label $AWS_EB_APP_VERSION --source-bundle S3Bucket=$AWS_S3_BUCKET,S3Key=$ARTIFACT_NAME'
-                    sh 'aws elasticbeanstalk update-environment --application-name $AWS_EB_APP_NAME --version-label $AWS_EB_APP_VERSION --environment-name $AWS_EB_ENVIRONMENT'
+                    sh 'aws elasticbeanstalk create-application-version --jenkins-1.1 $AWS_EB_APP_NAME --jenkins-1.1 $AWS_EB_APP_VERSION --source-bundle S3Bucket=$AWS_S3_BUCKET,S3Key=$calculator.jar'
+                    sh 'aws elasticbeanstalk update-environment --jenkins-1.1 $AWS_EB_APP_NAME --jenkins-1.1 $AWS_EB_APP_VERSION --Jenkins11-env $AWS_EB_ENVIRONMENT'
                 }
             }
         }
