@@ -40,14 +40,6 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
-	
-	<servers>
-		<server>
-		    <id>nexus-credentials</id>
-		    <username>admin</username>
-		    <password>123</password>
-		</server>
-	</servers>
 
 	<build>
 		<plugins>
