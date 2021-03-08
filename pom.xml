@@ -49,14 +49,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-	<distributionManagement>
-		
-		<snapshotRepository>
-			<id>demo-project</id>
-			<name>demo-project</name>
-			<url>http://3.21.154.153:8081/repository/demo-project/<url>
-		</snapshotRepository>
-	</distributionManagement>
 
 </project>
