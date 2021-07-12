@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculator-deployment
+  labels:
+    app: test-calculator
+    tier: front-end
+spec:
+  selector:
+    matchLabels:
+      app: test-calculator
+  replicas: 1
+  template:
+    metadata:
+      name: test-calculator
+      labels:
+        app: test-calculator
+    spec:
+      containers:
+      - name: test-calculator
+        image: naveenkumar1997/test-calclulator:calc
+        ports:
+        - containerPort: 5000
