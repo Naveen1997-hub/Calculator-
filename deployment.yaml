@@ -21,3 +21,18 @@ spec:
         image: naveenkumar1997/test-calclulator:calc
         ports:
         - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-calculator
+  labels:
+    app: test-calculator
+spec:
+  selector:
+    app: test-calculator
+  ports:
+  - port: 5000  
+    protocol: TCP
+    targetPort: 5000
+  type: LoadBalancer
