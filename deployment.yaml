@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: test-calculator
-        image: naveenkumar1997/test-calclulator:calc
+        image: naveenkumar1997/test-calculator:calc
         ports:
         - containerPort: 5000
 ---
